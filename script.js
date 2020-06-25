@@ -28,3 +28,9 @@ for (var i = 0; i < listaCognomi.length && finder == false; i++) {
     finder = true;
   }
 }
+
+//con un for stampo nell'html la lista di cognomi in ordine alfabetico
+
+for (var i = 0; i < listaCognomi.length; i++) {
+  document.getElementById("lista").innerHTML += "<li>" + listaCognomi[i] + "</li>";
+}

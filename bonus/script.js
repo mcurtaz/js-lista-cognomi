@@ -18,11 +18,11 @@ console.log(listaCognomi);
 
 // il for confronta gli elementi dell'array a due a due e li scambia se necessario. creo una variabile di appoggio "scambiFiniti" che cambia valore a seconda se nel ciclo c'è stato uno scambio tra due elementi. quando il ciclo di scambio percorre tutto l'array senza effettuare nessuno scambio l'array è in ordine alfabetico
 
-var scambiFiniti = false;
+var scambiFiniti;
 
-while (scambiFiniti == false){
+do{
 
-  scambiFiniti = true; //All'interno del ciclo do alla variabile valore true. se il for seguente non cambia nessuna posizione si esce dal while. se il for effettua anche solo uno scambio la variabile diventa false e si ricomincia un ciclo di while (e wuindi un altro for che scorre tutto l'array in cerca di cognomi da scambiare)
+  scambiFiniti = true; //All'interno del ciclo do alla variabile valore true. se il ciclo for seguente non cambia nessuna posizione si esce dal while. se il for effettua anche solo uno scambio la variabile diventa false e si ricomincia un ciclo di while (e quindi un altro ciclo for che scorre tutto l'array in cerca di cognomi da scambiare)
 
   for (var i = 0; i < listaCognomi.length - 1; i++) {
     //se localCompare restituisce 1 allora il secondo nome "listaCognome[i+1]" sarebbe in ordine alfabetico prima del primo "listaCognome[i]"
@@ -33,7 +33,7 @@ while (scambiFiniti == false){
       scambiFiniti = false;
     }
   }
-}
+} while (scambiFiniti == false);
 
 
 console.log(listaCognomi);
@@ -49,4 +49,10 @@ for (var i = 0; i < listaCognomi.length && finder == false; i++) {
     console.log("Il cognome inserito dall'utente è in posizione: " + (i+1));
     finder = true;
   }
+}
+
+//con un for stampo nell'html la lista di cognomi in ordine alfabetico
+
+for (var i = 0; i < listaCognomi.length; i++) {
+  document.getElementById("lista").innerHTML += "<li>" + listaCognomi[i] + "</li>";
 }
