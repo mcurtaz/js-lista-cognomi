@@ -12,7 +12,11 @@ listaCognomi.push(cognomeUtente);
 
 console.log(listaCognomi);
 
+//nel confrontare l'ordine alfabetico di due stringhe le maiuscole le mette sempre prima delle lettere minuscole. Per ovviare si trasforma la stringa in tutto minuscolo (o tutto maiuscolo) la funzione javascript si chiama .toLowerCase()   Ci sono funzioni in js per ritornare la prima maiuscola dopo il riordinamento. In questo caso è più semplice un "text-transform: capitalize" nel css
 
+for (var i = 0; i < listaCognomi.length; i++) {
+  listaCognomi[i] = listaCognomi[i].toLowerCase();
+}
 
 // BONUS RIORDINAMENTO ALFABETICO LISTA
 
@@ -54,5 +58,6 @@ for (var i = 0; i < listaCognomi.length && finder == false; i++) {
 //con un for stampo nell'html la lista di cognomi in ordine alfabetico
 
 for (var i = 0; i < listaCognomi.length; i++) {
-  document.getElementById("lista").innerHTML += "<li>" + listaCognomi[i] + "</li>";
+  //quando ho confrontato l'ordine alfabetico ho messo tutto in minuscolo con to.LowerCase(). In questo caso invece di usare il css metto text-transform in style nell'html. Non è il metodo migliore ma per quest'esercizio va bene così
+  document.getElementById("lista").innerHTML += '<li style="text-transform: capitalize;">' + listaCognomi[i] + "</li>";
 }
